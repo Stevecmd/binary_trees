@@ -5,12 +5,12 @@
  *
  * @tree: A pointer to the root node of the tree to measure the height.
  *
- * Return: The height of the tree. If tree is NULL, return 0.
+ * Return: The height of the tree. If tree is NULL, return -1.
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
 	if (tree == NULL)
-		return (0);
+		return (-1);
 
 	size_t left_height = (tree->left) ? 1 + binary_tree_height(tree->left) : 0;
 	size_t right_height = (tree->right) ? 1 + binary_tree_height(tree->right) : 0;
