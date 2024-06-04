@@ -11,15 +11,16 @@
  */
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
-	if (tree == NULL)
-		return (0);
+	if (!tree)
+		return (0); /* Empty tree has 0 leaves */
 
-	if (tree->left == NULL && tree->right == NULL)
-		return (1);
+	size_t leaves = 0;
 
-	/* Recursively count leaves in subtrees */
-	size_t left_leaves = binary_tree_leaves(tree->left);
-	size_t right_leaves = binary_tree_leaves(tree->right);
+	if (!tree->left && !tree->right)
+		leaves = 1; /* Leaf node */
 
-	return (left_leaves + right_leaves);
+	leaves += binary_tree_leaves(tree->left);
+	leaves += binary_tree_leaves(tree->right);
+
+	return (leaves);
 }
