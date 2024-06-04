@@ -38,18 +38,21 @@ int main(void)
 	avl = binary_tree_is_avl(root->left);
 	printf("Is %d avl: %d\n", root->left->n, avl);
 
-	root->right->left = binary_tree_node(root->right, 97);
+	root->right->left =
+		binary_tree_node(root->right, 97);
 	binary_tree_print(root);
 	avl = binary_tree_is_avl(root);
 	printf("Is %d avl: %d\n", root->n, avl);
 
 	root = basic_tree();
-	root->right->right->right = binary_tree_node(root->right->right, 430);
+	root->right->right->right =
+		binary_tree_node(root->right->right, 430);
 	binary_tree_print(root);
 	avl = binary_tree_is_avl(root);
 	printf("Is %d avl: %d\n", root->n, avl);
 
-	root->right->right->right->left = binary_tree_node(root->right->right->right, 420);
+	root->right->right->right->left =
+		binary_tree_node(root->right->right->right, 420);
 	binary_tree_print(root);
 	avl = binary_tree_is_avl(root);
 	printf("Is %d avl: %d\n", root->n, avl);
