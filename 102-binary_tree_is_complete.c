@@ -5,22 +5,29 @@
  *
  * @tree: A pointer to the root node of the tree to measure the size.
  *
- * Return: The size of the tree. If tree is NULL, return 0.
+ * Return: The size of the binary tree, or 0 if tree is NULL.
  */
 size_t binary_tree_size(const binary_tree_t *tree)
 {
-	if (tree == NULL)
-		return (0);
+	size_t size = 0;
 
-	return (1 + binary_tree_size(tree->left) + binary_tree_size(tree->right));
+	if (tree)
+	{
+		/* Add the sizes of the left and right subtrees */
+		size += 1;
+		size += binary_tree_size(tree->left);
+		size += binary_tree_size(tree->right);
+	}
+
+	return (size);
 }
 
 /**
- * binary_tree_is_complete - Checks if a binary tree is complete
+ * binary_tree_is_complete - Checks if a binary tree is complete.
  *
- * @tree: A pointer to the root node of the tree to check
+ * @tree: A pointer to the root node of the tree to check.
  *
- * Return: 1 if the tree is complete, 0 otherwise
+ * Return: 0 if tree is NULL, 1 if the tree is complete, 0 otherwise.
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
