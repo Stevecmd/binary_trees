@@ -73,7 +73,6 @@ int binary_tree_balance(const binary_tree_t *tree);
 
 /* 15. Is full */
 int binary_tree_is_full(const binary_tree_t *tree);
-#endif /* _BINARY_TREES_H_ */
 
 /* 16. Is perfect */
 size_t binary_tree_depth(const binary_tree_t *tree);
@@ -93,7 +92,8 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 
 /* 19. Lowest common ancestor  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
+binary_tree_t *binary_trees_ancestor(
+	const binary_tree_t *first, const binary_tree_t *second);
 
 /* 20. Level-order traversal  */
 size_t binary_tree_height(const binary_tree_t *tree);
@@ -113,3 +113,6 @@ typedef struct queue_s
 } queue_t;
 
 int binary_tree_is_complete(const binary_tree_t *tree);
+
+
+#endif /* _BINARY_TREES_H_ */
