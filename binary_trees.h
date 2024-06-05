@@ -140,9 +140,8 @@ bst_t *bst_find_min(bst_t *node);
 bst_t *bst_replace_node(bst_t *root, bst_t *old_node, bst_t *new_node);
 
 /* 30. Is AVL */
-int height(const binary_tree_t *tree);
-int is_bst(const binary_tree_t *tree, int min, int max);
-int is_balanced_avl(const binary_tree_t *tree);
+size_t height(const binary_tree_t *tree);
+int is_avl_helper(const binary_tree_t *tree, int lo, int hi);
 int binary_tree_is_avl(const binary_tree_t *tree);
 
 #endif /* _BINARY_TREES_H_ */
