@@ -139,4 +139,7 @@ bst_t *bst_remove(bst_t *root, int value);
 bst_t *bst_find_min(bst_t *node);
 bst_t *bst_replace_node(bst_t *root, bst_t *old_node, bst_t *new_node);
 
+/* 30. Is AVL */
+int binary_tree_is_avl(const binary_tree_t *tree);
+
 #endif /* _BINARY_TREES_H_ */
