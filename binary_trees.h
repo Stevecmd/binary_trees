@@ -2,6 +2,7 @@
 #define _BINARY_TREES_H_
 
 #include <stddef.h>
+#include <stdlib.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -99,3 +100,6 @@ size_t binary_tree_height(const binary_tree_t *tree);
 void print_level(const binary_tree_t *tree, size_t level, void (*func)(int));
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 
+/* 21. Is complete  */
+size_t binary_tree_size(const binary_tree_t *tree);
+int binary_tree_is_complete(const binary_tree_t *tree);
