@@ -63,7 +63,7 @@ size_t binary_tree_size(const binary_tree_t *tree);
 /* 12. Leaves */
 size_t binary_tree_leaves(const binary_tree_t *tree);
 
-/* 13. Ndoes */
+/* 13. Nodes */
 size_t binary_tree_nodes(const binary_tree_t *tree);
 
 /* 14. Balance Factor */
@@ -73,3 +73,9 @@ int binary_tree_balance(const binary_tree_t *tree);
 /* 15. Is full */
 int binary_tree_is_full(const binary_tree_t *tree);
 #endif /* _BINARY_TREES_H_ */
+
+/* 16. Is perfect */
+size_t binary_tree_depth(const binary_tree_t *tree);
+int binary_tree_is_full(const binary_tree_t *tree);
+int check_perfect(const binary_tree_t *tree, size_t depth, size_t level);
+int binary_tree_is_perfect(const binary_tree_t *tree);
