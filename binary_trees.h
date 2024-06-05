@@ -131,4 +131,7 @@ bst_t *bst_insert(bst_t **tree, int value);
 /* 26. BST - Array to BST */
 bst_t *array_to_bst(int *array, size_t size);
 
+/* 27. BST - Search */
+bst_t *bst_search(const bst_t *tree, int value);
+
 #endif /* _BINARY_TREES_H_ */
