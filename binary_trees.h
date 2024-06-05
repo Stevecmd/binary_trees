@@ -91,5 +91,7 @@ void binary_tree_print(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 
+/* 19. Lowest common ancestor  */
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
 
 
