@@ -124,4 +124,8 @@ binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 /* 24. Is BST */
 int binary_tree_is_bst(const binary_tree_t *tree);
 
+/* 25. BST - Insert  */
+typedef struct binary_tree_s bst_t;
+bst_t *bst_insert(bst_t **tree, int value);
+
 #endif /* _BINARY_TREES_H_ */
