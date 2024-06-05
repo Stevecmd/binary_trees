@@ -1,68 +1,105 @@
 #include "binary_trees.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * binary_tree_size - Measures the size of a binary tree.
+ * queue_push - Pushes a binary tree node into a queue.
  *
- * @tree: A pointer to the root node of the tree to measure the size.
- *
- * Return: The size of the binary tree, or 0 if tree is NULL.
+ * @queue: A pointer to the head of the queue.
+ * @node: A pointer to the binary tree node to push.
+ * Return: A pointer to the modified queue.
  */
-size_t binary_tree_size(const binary_tree_t *tree)
+static inline queue_t *queue_push(queue_t *queue, const binary_tree_t *node)
 {
-	size_t size = 0;
+	queue_t *new_node = malloc(sizeof(queue_t));
+	queue_t *temp = queue;
 
-	if (tree)
+	if (new_node == NULL)
+		return (NULL);
+
+	new_node->node = node;
+	new_node->next = NULL;
+
+	if (queue == NULL)
+		return (new_node);
+
+	while (temp->next != NULL)
+		temp = temp->next;
+
+	temp->next = new_node;
+	return (queue);
+}
+
+/**
+ * queue_pop - Pops a node from the front of a queue.
+ *
+ * @queue: A pointer to the head of the queue.
+ * Return: A pointer to the modified queue.
+ */
+static inline queue_t *queue_pop(queue_t *queue)
+{
+	queue_t *temp;
+
+	if (queue == NULL)
+		return (NULL);
+
+	temp = queue->next;
+	free(queue);
+	return (temp);
+}
+
+/**
+ * queue_free - Frees a queue.
+ *
+ * @queue: A pointer to the head of the queue.
+ */
+static inline void queue_free(queue_t *queue)
+{
+	queue_t *temp;
+
+	while (queue != NULL)
 	{
-		/* Add the sizes of the left and right subtrees */
-		size += 1;
-		size += binary_tree_size(tree->left);
-		size += binary_tree_size(tree->right);
+		temp = queue->next;
+		free(queue);
+		queue = temp;
 	}
-
-	return (size);
 }
 
 /**
  * binary_tree_is_complete - Checks if a binary tree is complete.
- *
  * @tree: A pointer to the root node of the tree to check.
- *
- * Return: 0 if tree is NULL, 1 if the tree is complete, 0 otherwise.
+ * Return: 1 if the tree is complete, 0 otherwise.
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
-	size_t index = 0, size;
-	binary_tree_t **queue = NULL;
-
 	if (tree == NULL)
 		return (0);
 
-	size = binary_tree_size(tree);
-	queue = malloc(sizeof(binary_tree_t *) * size);
-	if (queue == NULL)
-		return (0);
+	queue_t *queue = NULL;
+	int is_complete = 1, has_empty_slot = 0;
 
-	queue[index++] = (binary_tree_t *)tree;
+	queue = queue_push(queue, tree);
 
-	while (index < size)
+	while (queue != NULL)
 	{
-		if (queue[index] == NULL)
-			break;
+		const binary_tree_t *node = queue->node;
 
-		queue[index] = queue[index]->left;
-		queue[index + 1] = queue[index]->right;
-		index++;
-	}
+		queue = queue_pop(queue);
 
-	for (index = 0; queue[index] != NULL; index++)
-	{
-		if (queue[index]->left != NULL || queue[index]->right != NULL)
+		if (node == NULL)
+			has_empty_slot = 1;
+		else
 		{
-			free(queue);
-			return (0);
+			if (has_empty_slot)
+			{
+				is_complete = 0;
+				break;
+			}
+			queue = queue_push(queue, node->left);
+			queue = queue_push(queue, node->right);
 		}
 	}
 
-	free(queue);
-	return (1);
+	queue_free(queue);
+	return (is_complete);
 }
