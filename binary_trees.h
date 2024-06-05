@@ -128,4 +128,7 @@ int binary_tree_is_bst(const binary_tree_t *tree);
 typedef struct binary_tree_s bst_t;
 bst_t *bst_insert(bst_t **tree, int value);
 
+/* 26. BST - Array to BST */
+bst_t *array_to_bst(int *array, size_t size);
+
 #endif /* _BINARY_TREES_H_ */
