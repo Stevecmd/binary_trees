@@ -145,5 +145,7 @@ avl_t *avl_insert(avl_t **tree, int value);
 /* 37. Heap - Insert */
 heap_t *heapify_up(heap_t *tree);
 heap_t *heap_insert(heap_t **root, int value);
+void enqueue(heap_t **queue, int *rear, heap_t *node);
+heap_t *dequeue(heap_t **queue, int *front);
 
 #endif /* _BINARY_TREES_H_ */
