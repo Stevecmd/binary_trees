@@ -142,6 +142,9 @@ avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
 							avl_t **new, int value);
 avl_t *avl_insert(avl_t **tree, int value);
 
+/* 32. AVL - Array to AVL */
+avl_t *array_to_avl(int *array, size_t size);
+
 /* 37. Heap - Insert */
 heap_t *heapify_up(heap_t *tree);
 heap_t *heap_insert(heap_t **root, int value);
