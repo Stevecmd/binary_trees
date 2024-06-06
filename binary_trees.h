@@ -145,6 +145,12 @@ avl_t *avl_insert(avl_t **tree, int value);
 /* 32. AVL - Array to AVL */
 avl_t *array_to_avl(int *array, size_t size);
 
+/* 36. Is Binary heap */
+size_t binary_tree_size(const binary_tree_t *tree);
+int is_complete(const binary_tree_t *tree, size_t index, size_t size);
+int is_max_heap(const binary_tree_t *tree);
+int binary_tree_is_heap(const binary_tree_t *tree);
+
 /* 37. Heap - Insert */
 heap_t *heapify_up(heap_t *tree);
 heap_t *heap_insert(heap_t **root, int value);
