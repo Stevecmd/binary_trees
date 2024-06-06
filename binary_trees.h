@@ -123,9 +123,8 @@ bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
 
 /* 28. BST - Remove */
-bst_t *bst_remove(bst_t *root, int value);
 bst_t *bst_find_min(bst_t *node);
-bst_t *bst_replace_node(bst_t *root, bst_t *old_node, bst_t *new_node);
+bst_t *bst_remove(bst_t *root, int value);
 
 /* 30. Is AVL */
 size_t height(const binary_tree_t *tree);
