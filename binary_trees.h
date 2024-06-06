@@ -148,4 +148,7 @@ heap_t *heap_insert(heap_t **root, int value);
 void enqueue(heap_t **queue, int *rear, heap_t *node);
 heap_t *dequeue(heap_t **queue, int *front);
 
+/* 38. Heap - Array to Binary Heap */
+heap_t *array_to_heap(int *array, size_t size);
+
 #endif /* _BINARY_TREES_H_ */
