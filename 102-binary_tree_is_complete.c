@@ -9,7 +9,7 @@
  * @node: A pointer to the binary tree node to push.
  * Return: A pointer to the modified queue.
  */
-static inline queue_t *queue_push(queue_t *queue, const binary_tree_t *node)
+queue_t *queue_push(queue_t *queue, const binary_tree_t *node)
 {
 	queue_t *new_node = malloc(sizeof(queue_t));
 	queue_t *temp = queue;
@@ -36,7 +36,7 @@ static inline queue_t *queue_push(queue_t *queue, const binary_tree_t *node)
  * @queue: A pointer to the head of the queue.
  * Return: A pointer to the modified queue.
  */
-static inline queue_t *queue_pop(queue_t *queue)
+queue_t *queue_pop(queue_t *queue)
 {
 	queue_t *temp;
 
@@ -53,7 +53,7 @@ static inline queue_t *queue_pop(queue_t *queue)
  *
  * @queue: A pointer to the head of the queue.
  */
-static inline void queue_free(queue_t *queue)
+void queue_free(queue_t *queue)
 {
 	queue_t *temp;
 

@@ -102,9 +102,9 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 
 /* 21. Is complete  */
 /**
- * struct queue_s - Structure for a queue node
- * @node: A pointer to a binary tree node
- * @next: A pointer to the next node in the queue
+ * struct queue_s - singly linked list for queue.
+ * @node: A binary tree node.
+ * @next: A pointer to the next node.
  */
 typedef struct queue_s
 {
@@ -112,6 +112,9 @@ typedef struct queue_s
 	struct queue_s *next;
 } queue_t;
 
+/* queue_t *queue_push(queue_t *queue, const binary_tree_t *node); */
+/* queue_t *queue_pop(queue_t *queue); */
+/* void queue_free(queue_t *queue); */
 int binary_tree_is_complete(const binary_tree_t *tree);
 
 
