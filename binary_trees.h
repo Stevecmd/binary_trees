@@ -22,6 +22,9 @@ struct binary_tree_s
 
 typedef struct binary_tree_s binary_tree_t;
 
+/* Define heap_t type No.37 */
+typedef struct binary_tree_s heap_t;
+
 /* Binary tree print */
 void binary_tree_print(const binary_tree_t *tree);
 
@@ -138,5 +141,9 @@ int balance(const binary_tree_t *tree);
 avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
 							avl_t **new, int value);
 avl_t *avl_insert(avl_t **tree, int value);
+
+/* 37. Heap - Insert */
+heap_t *heapify_up(heap_t *tree);
+heap_t *heap_insert(heap_t **root, int value);
 
 #endif /* _BINARY_TREES_H_ */
