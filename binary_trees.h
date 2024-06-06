@@ -127,8 +127,8 @@ bst_t *bst_find_min(bst_t *node);
 bst_t *bst_remove(bst_t *root, int value);
 
 /* 30. Is AVL */
-size_t height(const binary_tree_t *tree);
 int is_avl_helper(const binary_tree_t *tree, int lo, int hi);
 int binary_tree_is_avl(const binary_tree_t *tree);
+size_t height(const binary_tree_t *tree);
 
 #endif /* _BINARY_TREES_H_ */
